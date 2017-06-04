@@ -454,7 +454,10 @@ class BreadCrumbsTraitTest extends TestCase
     public function testGetListActiveElement()
     {
         $this->breadcrumbs->setListActiveElement('li');
-        $this->assertSame($this->breadcrumbs->getListActiveElement(), $this->breadcrumbs->getOption('listActiveElement'));
+        $this->assertSame(
+            $this->breadcrumbs->getListActiveElement(),
+            $this->breadcrumbs->getOption('listActiveElement')
+        );
     }
 
     /**
