@@ -1,0 +1,46 @@
+{
+    "name": "xety/breadcrumbs",
+    "description": "A simple breadcrumbs generator with fluent pattern.",
+    "keywords": [
+        "breadcrumbs",
+        "fluent",
+        "pattern"
+    ],
+    "homepage": "https://github.com/Xety/Breadcrumbs",
+    "support": {
+        "source": "https://github.com/Xety/Breadcrumbs",
+        "issues": "https://github.com/Xety/Breadcrumbs/issues"
+    },
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Xety",
+            "email": "emeric@xeta.io",
+            "homepage": "https://github.com/Xety"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "xety/configurator": "~1.0"
+    },
+    "require-dev": {
+        "symfony/dom-crawler": "~3.3",
+        "symfony/css-selector": "~3.3",
+        "phpunit/phpunit": "~6.0",
+        "squizlabs/php_codesniffer": "~3.0",
+        "xety/phpdoc-md": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xety\\Breadcrumbs\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
