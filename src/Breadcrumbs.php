@@ -25,11 +25,13 @@ class Breadcrumbs extends Configurator
         'position' => false,
         // The divider symbol between the crumbs or `null` to disable it.
         'divider' => null,
+        // The DOM-Element used to generate the divider element.
         'dividerElement' => 'span',
+        // Classes applied to the item `dividerElement` element.
         'dividerElementClasses'=> [
             'divider'
         ],
-        // The DOM-Element that wraps the breadcrumbs.
+        // The DOM-Element used to generate the container element.
         'listElement' => 'nav',
         // Classes applied to the main `listElement` container element.
         'listElementClasses' => [
@@ -43,7 +45,7 @@ class Breadcrumbs extends Configurator
         ],
         // The DOM-Element used to generate the active list item.
         'listActiveElement' => 'span',
-        // Classes applied to the current active breadcrumb.
+        // Classes applied to the active item `listActiveElement` element.
         'listActiveElementClasses' => [
             'breadcrumb-item',
             'active'

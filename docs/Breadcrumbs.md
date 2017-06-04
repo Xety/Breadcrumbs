@@ -59,9 +59,8 @@ optional array of options to configure the breadcrumbs.
 
 **Parameters**
 
-* `(array) $breadcrumbs`
-: The breadcrumbs to add.* `(array) $options`
-: The option to set.
+* `(array) $breadcrumbs` : The breadcrumbs to add.
+* `(array) $options` : The option to set.
 
 **Return Values**
 
