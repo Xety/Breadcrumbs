@@ -57,7 +57,7 @@ class Breadcrumbs extends Configurator
      * optional array of options to configure the breadcrumbs.
      *
      * @param array $breadcrumbs The breadcrumbs to add.
-     * @param array $options The option to set.
+     * @param array $options The options to set.
      */
     public function __construct(array $breadcrumbs = [], array $options = [])
     {
@@ -188,7 +188,7 @@ class Breadcrumbs extends Configurator
     }
 
     /**
-     * Get the first crumb formated.
+     * Get the first crumb formated as HTML.
      *
      * @return string
      */
@@ -218,7 +218,7 @@ class Breadcrumbs extends Configurator
     }
 
     /**
-     * Get the last crumb formated.
+     * Get the last crumb formated as HTML.
      *
      * @return string
      */
@@ -244,7 +244,7 @@ class Breadcrumbs extends Configurator
     }
 
     /**
-     * Removes all breadcrumbs.
+     * Remove all breadcrumbs.
      *
      * @return \Xety\Breadcrumbs\Breadcrumbs
      */

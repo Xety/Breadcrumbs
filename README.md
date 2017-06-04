@@ -36,14 +36,13 @@ $breadcrumbs = new Breadcrumbs(
         ]
     ],
     [
-        'divider' => '|',
         'position' => true
     ]
 );
 ```
 
 ### Output
-To render your breadcrumbs, you can onvoke the function `render()` or directly "echoing" it:
+To render your breadcrumbs, you can invoke the function `render()` or directly "echoing" it:
 ```php
 echo $breadcrumbs->render();
 
@@ -53,11 +52,10 @@ echo $breadcrumbs;
 ```
 
 #### Output examples:
-This class is configured **by default** to render witht the Bootstrap 4 style. So with the above configuration, the output will look like that :
+This class is configured **by default** to render with the Bootstrap 4 style. So with the above configuration, the output will look like that :
 ```html
 <nav class="breadcrumb">
     <a data-position="1" class="breadcrumb-item" href="/home">Home</a>
-    <span class="divider">|</span>
     <span data-position="2" class="breadcrumb-item active" href="/blog">Blog</span>
 </nav>
 ```

@@ -17,7 +17,7 @@
 |[clear](#breadcrumbsclear)|Removes all breadcrumbs.|
 |[count](#breadcrumbscount)|Gets the current amount of breadcrumbs.|
 |[first](#breadcrumbsfirst)|Get the first crumb.|
-|[firstFormated](#breadcrumbsfirstformated)|Get the first crumb formated.|
+|[firstFormated](#breadcrumbsfirstformated)|Get the first crumb formated as HTML.|
 |[getBreadcrumbs](#breadcrumbsgetbreadcrumbs)|Get the currently breadcrumbs.|
 |[getDivider](#breadcrumbsgetdivider)|Get the divider currently in use.|
 |[getDividerElement](#breadcrumbsgetdividerelement)|Get the divider DOM Element.|
@@ -30,7 +30,7 @@
 |[getListItemElementClasses](#breadcrumbsgetlistitemelementclasses)|Get the item DOM Element classes.|
 |[isEmpty](#breadcrumbsisempty)|Checks whether there are any breadcrumbs added yet.|
 |[last](#breadcrumbslast)|Get the last crumb.|
-|[lastFormated](#breadcrumbslastformated)|Get the last crumb formated.|
+|[lastFormated](#breadcrumbslastformated)|Get the last crumb formated as HTML.|
 |[removeDividerElementClasses](#breadcrumbsremovedividerelementclasses)|Remove a list of classes to the divider DOM Element.|
 |[removeListActiveElementClasses](#breadcrumbsremovelistactiveelementclasses)|Remove a list of classes to the active DOM Element.|
 |[removeListElementClasses](#breadcrumbsremovelistelementclasses)|Remove a list of classes to the container DOM Element.|
@@ -60,7 +60,7 @@ optional array of options to configure the breadcrumbs.
 **Parameters**
 
 * `(array) $breadcrumbs` : The breadcrumbs to add.
-* `(array) $options` : The option to set.
+* `(array) $options` : The options to set.
 
 **Return Values**
 
@@ -260,7 +260,7 @@ public clear (void)
 
 **Description**
 
-Removes all breadcrumbs.
+Remove all breadcrumbs.
 
 
 **Parameters**
@@ -329,7 +329,7 @@ public firstFormated (void)
 
 **Description**
 
-Get the first crumb formated.
+Get the first crumb formated as HTML.
 
 
 **Parameters**
@@ -628,7 +628,7 @@ public lastFormated (void)
 
 **Description**
 
-Get the last crumb formated.
+Get the last crumb formated as HTML.
 
 
 **Parameters**
