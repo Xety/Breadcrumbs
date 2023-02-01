@@ -32,16 +32,28 @@ class Breadcrumbs extends Configurator
             'divider'
         ],
         // The DOM-Element used to generate the container element.
-        'listElement' => 'nav',
+        'listRootElement' => 'nav',
         // Classes applied to the main `listElement` container element.
-        'listElementClasses' => [
+        'listRootElementClasses' => [
             'breadcrumb'
         ],
+        // The DOM-Element used to generate the container element.
+        'listElement' => 'ol',
+        // Classes applied to the main `listElement` container element.
+        'listElementClasses' => [
+            'breadcrumb-list'
+        ],
         // The DOM-Element used to generate the list item.
-        'listItemElement' => 'a',
+        'listItemElement' => 'li',
         // Classes applied to the list item `listItemElement` element.
         'listItemElementClasses' => [
             'breadcrumb-item'
+        ],
+        // The DOM-Element used to generate the list item.
+        'listItemLinkElement' => 'a',
+        // Classes applied to the list item `listItemElement` element.
+        'listItemLinkElementClasses' => [
+            'breadcrumb-link'
         ],
         // The DOM-Element used to generate the active list item.
         'listActiveElement' => 'span',
@@ -273,13 +285,22 @@ class Breadcrumbs extends Configurator
         }
 
         if ($isLast) {
-            $element = $this->getOption('listActiveElement');
-            $classes = $this->getClasses('listActiveElementClasses');
+            $listActiveElement = $this->getOption('listActiveElement');
+            $listActiveElementClasses = $this->getClasses('listActiveElementClasses');
 
-            return "<{$element} {$positionAttribute} class=\"{$classes}\">{$name}</{$element}>";
+            $divider = "<{$listActiveElement} {$positionAttribute} class=\"{$listActiveElementClasses}\">{$name}</{$listActiveElement}>";
+
+            if (!empty($this->getOption('listItemElement'))) {
+                $listItemElement = $this->getOption('listItemElement');
+                $listItemElementClasses = $this->getClasses('listItemElementClasses');
+
+                return "<{$listItemElement} class=\"{$listItemElementClasses}\">" . $divider . "</{$listItemElement}>";
+            }
+
+            return $divider;
         }
-        $element = $this->getOption('listItemElement');
-        $classes = $this->getClasses('listItemElementClasses');
+        $listItemLinkElement = $this->getOption('listItemLinkElement');
+        $listItemLinkElementClasses = $this->getClasses('listItemLinkElementClasses');
 
         $divider = '';
 
@@ -291,7 +312,16 @@ class Breadcrumbs extends Configurator
             $divider = "<{$dividerElement} class=\"{$dividerClasses}\">{$divider}</{$dividerElement}>";
         }
 
-        return "<{$element} {$positionAttribute} class=\"{$classes}\" href=\"{$href}\">{$name}</{$element}>{$divider}";
+        $itemLink =  "<{$listItemLinkElement} {$positionAttribute} class=\"{$listItemLinkElementClasses}\" href=\"{$href}\">{$name}</{$listItemLinkElement}>{$divider}";
+
+        if (!empty($this->getOption('listItemElement'))) {
+            $listItemElement = $this->getOption('listItemElement');
+            $listItemElementClasses = $this->getClasses('listItemElementClasses');
+
+            return "<{$listItemElement} class=\"{$listItemElementClasses}\">" . $itemLink . "</{$listItemElement}>";
+        }
+
+        return $itemLink;
     }
 
     /**
@@ -349,10 +379,21 @@ class Breadcrumbs extends Configurator
             return '';
         }
 
-        $classes = $this->getClasses('listElementClasses');
-        $element = $this->getOption('listElement');
+        $listElementClasses = $this->getClasses('listElementClasses');
+        $listElement = $this->getOption('listElement');
 
-        return "<{$element} class=\"{$classes}\">" . $this->renderCrumbs() . "</{$element}>";
+        $listElement = "<{$listElement} class=\"{$listElementClasses}\">" . $this->renderCrumbs() . "</{$listElement}>";
+
+        if (!empty($this->getOption('listRootElement'))) {
+            $rootElement = $this->getOption('listRootElement');
+            $rootElementClasses = $this->getClasses('listRootElementClasses');
+
+            $listRootElement = "<{$rootElement} class=\"{$rootElementClasses}\">" . $listElement . "</{$rootElement}>";
+
+            return $listRootElement;
+        }
+
+        return $listElement;
     }
 
     /**
