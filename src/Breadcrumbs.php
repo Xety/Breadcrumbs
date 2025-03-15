@@ -290,13 +290,6 @@ class Breadcrumbs extends Configurator
 
             $divider = "<{$listActiveElement} {$positionAttribute} class=\"{$listActiveElementClasses}\">{$name}</{$listActiveElement}>";
 
-            if (!empty($this->getOption('listItemElement'))) {
-                $listItemElement = $this->getOption('listItemElement');
-                $listItemElementClasses = $this->getClasses('listItemElementClasses');
-
-                return "<{$listItemElement} class=\"{$listItemElementClasses}\">" . $divider . "</{$listItemElement}>";
-            }
-
             return $divider;
         }
         $listItemLinkElement = $this->getOption('listItemLinkElement');
